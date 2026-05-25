@@ -322,7 +322,7 @@ client.on("interactionCreate", async (interaction) => {
   if (interaction.isChatInputCommand() && interaction.commandName === "setup-tos") {
   try { await interaction.deferReply({ flags: 64 }); } catch { return; }
 
-  const TOS_CHANNEL_ID = "1505208948045778994";
+  const TOS_CHANNEL_ID = "1508429535740166267";
   const tosChannel = client.channels.cache.get(TOS_CHANNEL_ID);
   if (!tosChannel) return interaction.editReply("❌ tos-crypto channel not found.");
 
@@ -336,7 +336,7 @@ client.on("interactionCreate", async (interaction) => {
   await rest.post(Routes.channelMessages(TOS_CHANNEL_ID), {
     body: {
       content:
-        `> The ToS in <#1505208874016182424> also apply here.\n` +
+        `> The ToS in <#1508429535740166267> also apply here.\n` +
         `> You can start a trade with the Automatic MM Bot here: <#${AUTO_CRYPTO_CHANNEL}>`,
       components: [
         {
