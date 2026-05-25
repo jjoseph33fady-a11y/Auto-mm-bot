@@ -374,7 +374,7 @@ client.on("interactionCreate", async (interaction) => {
 }
 
   if (interaction.isChatInputCommand() && interaction.commandName === "setup-crypto") {
-    await interaction.deferReply({ flags: 64 });
+    try { await interaction.deferReply({ flags: 64 }); } catch { return; }
 
     const channel = client.channels.cache.get(AUTO_CRYPTO_CHANNEL);
     if (!channel) return interaction.editReply("❌ auto-crypto channel not found.");
